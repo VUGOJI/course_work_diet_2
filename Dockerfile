@@ -11,5 +11,5 @@ COPY server.js .
 EXPOSE 8080
 
 # Command to run your Node.js application
-CMD ["node", "app.js"]
+CMD ["node", "server.js"]
 
