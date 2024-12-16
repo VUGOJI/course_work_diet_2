@@ -1,20 +1,15 @@
-# Use an official Node.js runtime as the base image
-FROM node:18-alpine
+# Use the official Node.js 18 base image
+FROM node:18
 
 # Set the working directory inside the container
 WORKDIR /usr/src/app
 
-# Copy package.json and package-lock.json (if available) to the container
-COPY package*.json ./
+# Copy the application script into the container
+COPY server.js .
 
-# Install dependencies
-RUN npm install
-
-# Copy the application code to the container
-COPY . .
-
-# Expose the application port
+# Expose port 8080 to allow traffic
 EXPOSE 8080
 
-# Start the application
-CMD ["node", "server.js"]
+# Command to run your Node.js application
+CMD ["node", "app.js"]
+
